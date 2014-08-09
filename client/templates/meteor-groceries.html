@@ -1,0 +1,32 @@
+<head>
+  <title>Grocery List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    {{> add_item}}
+    {{> item_list}}
+  </div>
+</body>
+
+
+<template name="add_item">
+  <div class="enter-food-items">
+  <p>Grocery List</p>
+  <form id="add-food">
+  <input type="text" id="food-name" placeholder="Add something.."/>
+  <button id="add-button"><span class="glyphicon glyphicon-plus"></span> Add</button>
+  </form>
+  </div>
+</template>
+
+
+<template name="item_list">
+  <ul>
+  {{#each item}}
+    <li>{{food_item}}</li>
+  {{/each}}
+  </ul>
+</template>
