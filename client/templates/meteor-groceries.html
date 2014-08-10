@@ -2,6 +2,7 @@
   <title>Grocery List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -13,11 +14,10 @@
 
 
 <template name="add_item">
-  <div class="enter-food-items">
-  <p>Grocery List</p>
+  <div class="navbar navbar-fixed-top">
   <form id="add-food">
-  <input type="text" id="food-name" placeholder="Add something.."/>
-  <button id="add-button"><span class="glyphicon glyphicon-plus"></span> Add</button>
+  <input type="text" id="food-name" placeholder="Grocery list.."/>
+  <button id="add-button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add</button>
   </form>
   </div>
 </template>
@@ -26,7 +26,7 @@
 <template name="item_list">
   <ul>
   {{#each item}}
-    <li>{{food_item}}</li>
+    <li>{{food_item}} <span class="glyphicon glyphicon-remove"></span></li>
   {{/each}}
   </ul>
 </template>

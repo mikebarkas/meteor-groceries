@@ -18,3 +18,11 @@ Template.add_item.events({
     $('#food-name').val('');
   }
 });
+
+// Delete food item.
+Template.item_list.events({
+
+  'click .glyphicon-remove' : function() {
+    groceries.remove(this._id);
+  }
+});

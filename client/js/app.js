@@ -1,5 +1,5 @@
 $(function() {
 
-  $('h1').addClass('title');
+  //$("li:nth-child(3)").addClass('selected');
 
 });

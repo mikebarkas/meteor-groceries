@@ -1,7 +1,44 @@
 body {
-  font-family: verdana !important;
+  padding-top: 70px;
+  font-family: 'Open Sans', verdana !important;
+  font-size: 1.8em !important;
 }
 
 .container-fluid {
   padding: 3px 10px !important;
+}
+
+.navbar {
+  background: #f8f8f8;
+  padding:  15px;
+  border-bottom: 1px solid #ccc !important;
+}
+
+input {
+  padding: 3px 0 3px 10px;
+}
+
+ul {
+  padding:  0;
+}
+
+li {
+  list-style: none;
+  padding: 10px 0 10px 10px;
+  font-size: 1.8em;
+  border-bottom: 1px solid #ededed;
+}
+
+li.selected {
+  border: 1px solid #ccc;
+  background: #f2dede;
+  color: #ccc;
+}
+
+li .glyphicon-remove {
+  position: relative;
+  top: 5px;
+  float: right;
+  margin-right: 10px;
+  color: #d9534f;
 }
