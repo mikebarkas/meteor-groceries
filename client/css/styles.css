@@ -41,5 +41,11 @@ li .glyphicon-remove {
   float: right;
   margin-right: 10px;
   color: #d9534f;
+}
+li .glyphicon {
   display: none;
+}
+
+li.selected .glyphicon {
+  display: inline;
 }

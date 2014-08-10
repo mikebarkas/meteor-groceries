@@ -22,13 +22,14 @@ Template.add_item.events({
 // Delete food item.
 Template.item_list.events({
 
-  'click .glyphicon-remove' : function() {
-    groceries.remove(this._id);
+  // Highlight the row.
+  'click #food-list-item' : function(e) {
+    $(e.target).toggleClass('selected');
   },
 
-  'click #food-list-item' : function(e) {
-    $(e.target).toggleClass("selected");
-    
+  // Delete the item.
+  'click .glyphicon-remove' : function() {
+    groceries.remove(this._id);
   }
 
 });
