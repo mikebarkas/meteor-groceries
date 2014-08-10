@@ -23,6 +23,7 @@ body {
  */
 
 input {
+  width: 200px;
   padding: 3px 0 3px 10px;
 }
 
@@ -44,6 +45,7 @@ li {
 li.selected {
   background: #f2dede;
   color: #d9534f;
+  text-decoration: line-through;
 }
 
 li .glyphicon-remove {

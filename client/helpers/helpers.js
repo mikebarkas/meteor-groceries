@@ -5,6 +5,7 @@ Template.item_list.helpers({
   item: function() {
     return groceries.find();
   }
+
 });
 
 
@@ -17,6 +18,7 @@ Template.add_item.events({
     });
     $('#food-name').val('');
   }
+
 });
 
 // Delete food item.
@@ -30,6 +32,15 @@ Template.item_list.events({
   // Delete the item.
   'click .glyphicon-remove' : function() {
     groceries.remove(this._id);
+  }
+
+});
+
+// Total item count.
+Template.add_item.helpers({
+
+  total_items: function() {
+    return groceries.find().count();
   }
 
 });
