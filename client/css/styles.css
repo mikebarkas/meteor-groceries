@@ -1,3 +1,7 @@
+/*
+ * Layout.
+ */
+
 body {
   padding-top: 70px;
   font-family: 'Open Sans', verdana !important;
@@ -14,9 +18,17 @@ body {
   border-bottom: 1px solid #ccc !important;
 }
 
+/**
+ * Form.
+ */
+
 input {
   padding: 3px 0 3px 10px;
 }
+
+/**
+ * Rows.
+ */
 
 ul {
   padding:  0;
@@ -30,9 +42,8 @@ li {
 }
 
 li.selected {
-  border: 1px solid #ccc;
   background: #f2dede;
-  color: #777;
+  color: #d9534f;
 }
 
 li .glyphicon-remove {
@@ -42,6 +53,8 @@ li .glyphicon-remove {
   margin-right: 10px;
   color: #d9534f;
 }
+
+/* Hide/show delete icon. */
 li .glyphicon {
   display: none;
 }
