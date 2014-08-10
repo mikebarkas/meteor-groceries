@@ -24,5 +24,11 @@ Template.item_list.events({
 
   'click .glyphicon-remove' : function() {
     groceries.remove(this._id);
+  },
+
+  'click #food-list-item' : function(e) {
+    $(e.target).toggleClass("selected");
+    
   }
+
 });

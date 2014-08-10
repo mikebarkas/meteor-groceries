@@ -32,7 +32,7 @@ li {
 li.selected {
   border: 1px solid #ccc;
   background: #f2dede;
-  color: #ccc;
+  color: #777;
 }
 
 li .glyphicon-remove {
@@ -41,4 +41,5 @@ li .glyphicon-remove {
   float: right;
   margin-right: 10px;
   color: #d9534f;
+  display: none;
 }
