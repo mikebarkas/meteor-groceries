@@ -43,8 +43,8 @@ li {
 }
 
 li.selected {
-  background: #f2dede;
-  color: #d9534f;
+  background: #fcf8e3;/*#f2dede*/
+  color: #888888; /*#d9534f*/
   text-decoration: line-through;
 }
 
