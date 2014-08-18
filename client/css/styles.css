@@ -43,9 +43,21 @@ li {
 }
 
 li.selected {
-  background: #fcf8e3;/*#f2dede*/
+  background: #fcf8e3 !important;/*#f2dede*/
+  color: #888888; /*#d9534f*/
+}
+
+li.completed {
+  background: #f8f8f8;/*#f2dede*/
   color: #888888; /*#d9534f*/
   text-decoration: line-through;
+}
+
+li .glyphicon-ok {
+  position: relative;
+  float: right;
+  margin-right: 30px;
+  color: #5cb85c;
 }
 
 li .glyphicon-remove {
@@ -62,5 +74,5 @@ li .glyphicon {
 }
 
 li.selected .glyphicon {
-  display: inline;
+  display: inline-block;
 }

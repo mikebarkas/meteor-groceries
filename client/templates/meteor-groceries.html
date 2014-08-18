@@ -18,7 +18,7 @@
   <form id="add-food">
   <input type="text" id="food-name" placeholder="Grocery list.."/>
   <button id="add-button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add</button>
-  <span class="total-items">{{total_items}}</span>
+  <span class="badge total-items">{{total_items}}</span>
   </form>
   </div>
 </template>
@@ -27,7 +27,10 @@
 <template name="item_list">
   <ul>
   {{#each item}}
-    <li id="food-list-item">{{food_item}} <span class="glyphicon glyphicon-remove"></span></li>
+    <li id="food-list-item">{{food_item}} 
+    <span class="glyphicon glyphicon-remove"></span>
+    <span class="glyphicon glyphicon-ok"></span>
+    </li>
   {{/each}}
   </ul>
 </template>

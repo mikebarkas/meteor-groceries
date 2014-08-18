@@ -22,7 +22,7 @@ Template.add_item.events({
       $('#food-name').val('');
     }
   }
-  
+
 });
 
 // Delete food item.
@@ -31,6 +31,12 @@ Template.item_list.events({
   // Highlight the row.
   'click #food-list-item' : function(e) {
     $(e.target).toggleClass('selected');
+  },
+
+  // Complete the task.
+  'click .glyphicon-ok' : function(e) {
+    $(e.target).parent().toggleClass('completed');
+    $(e.target).parent().removeClass('selected');
   },
 
   // Delete the item.
