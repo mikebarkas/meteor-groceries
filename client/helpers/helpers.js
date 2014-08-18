@@ -11,14 +11,18 @@ Template.item_list.helpers({
 
 // Add food items.
 Template.add_item.events({
+  
+  'click #add-button' : function(e) {
+    e.preventDefault();
 
-  'click #add-button' : function() {
-    groceries.insert({
-      food_item: $('#food-name').val()
-    });
-    $('#food-name').val('');
+    if ($('#food-name').val().length) {
+      groceries.insert({
+        food_item: $('#food-name').val()
+      });
+      $('#food-name').val('');
+    }
   }
-
+  
 });
 
 // Delete food item.
