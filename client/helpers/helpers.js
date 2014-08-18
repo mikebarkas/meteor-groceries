@@ -3,7 +3,9 @@
 Template.item_list.helpers({
 
   item: function() {
-    return groceries.find();
+    return groceries.find({}, {
+      sort: {food_item: 1}
+    });
   }
 
 });
