@@ -4,7 +4,7 @@ Template.item_list.helpers({
 
   item: function() {
     return groceries.find({}, {
-      sort: {food_item: 1}
+      sort: {sort: 1}
     });
   }
 
@@ -13,13 +13,23 @@ Template.item_list.helpers({
 
 // Add food items.
 Template.add_item.events({
-  
+
   'click #add-button' : function(e) {
     e.preventDefault();
 
     if ($('#food-name').val().length) {
+      // Create sort field sequence value.
+      var total = groceries.find().count();
+
+      if (total == 0) {
+        var seq = total;
+      } else {
+        var seq = total++;
+      }
+
       groceries.insert({
-        food_item: $('#food-name').val()
+        food_item: $('#food-name').val(),
+        sort: seq
       });
       $('#food-name').val('');
     }
