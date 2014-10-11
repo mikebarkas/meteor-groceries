@@ -42,6 +42,10 @@ li {
   border-bottom: 1px solid #ededed;
 }
 
+li:hover {
+  cursor: pointer;
+}
+
 li.selected {
   background: #fcf8e3 !important;/*#f2dede*/
   color: #888888; /*#d9534f*/

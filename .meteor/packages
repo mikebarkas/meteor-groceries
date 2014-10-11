@@ -6,3 +6,5 @@
 standard-app-packages
 autopublish
 insecure
+mrt:jquery-ui
+mrt:jquery-ui-sortable

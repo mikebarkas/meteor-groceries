@@ -4,7 +4,7 @@ Template.item_list.helpers({
 
   item: function() {
     return groceries.find({}, {
-      sort: {food_item: 1}
+      sort: {sort: 1}
     });
   }
 
@@ -17,8 +17,18 @@ Template.add_item.events({
     e.preventDefault();
 
     if ($('#food-name').val().length) {
+
+      // Create sort field sequence value.
+      var total = groceries.find().count();
+      if (total == 0) {
+        var seq = total;
+      } else {
+        var seq = total++;
+      }
+
       groceries.insert({
-        food_item: $('#food-name').val()
+        food_item: $('#food-name').val(),
+        sort: seq
       });
       $('#food-name').val('');
     }
@@ -26,7 +36,36 @@ Template.add_item.events({
 
 });
 
-// Delete food item.
+// Make sortable.
+Template.item_list.rendered = function() {
+
+  this.$('#sortable').sortable({
+
+    stop: function(e, ui) {
+
+      target = ui.item.get(0);
+      before = ui.item.prev().get(0);
+      after = ui.item.next().get(0);
+
+      if (!before) {
+        newSort = Blaze.getData(after).sort -1;
+      } else if (!after) {
+        newSort = Blaze.getData(before).sort +1;
+      } else {
+        newSort = (Blaze.getData(after).sort +
+                  Blaze.getData(before).sort) / 2;
+      }
+      
+      groceries.update(
+        {_id: Blaze.getData(target)._id},
+        {$set: {sort: newSort}}
+      );
+    }
+  })
+
+}
+
+// Select and delete food item.
 Template.item_list.events({
 
   // Highlight the row.
