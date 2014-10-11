@@ -38,9 +38,10 @@ Template.add_item.events({
 });
 
 // Make sortable.
-Template.item_list.rendered({
+Template.item_list.rendered = function() {
 
-  this.$('#food-list-item').sortable({
+  this.$('#sortable').sortable({
+
     stop: function(e, ui) {
 
       target = ui.item.get(0);
@@ -55,15 +56,15 @@ Template.item_list.rendered({
         newSort = (Blaze.getData(after).seq +
                   Blaze.getData(before).seq) / 2;
       }
-
+      console.log(newSort);
       groceries.update(
         {_id: Blaze.getData(target)._id},
         {$set: {sort: newSort}}
       );
     }
-  });
+  })
 
-});
+}
 
 // Select and delete food item.
 Template.item_list.events({
