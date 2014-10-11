@@ -10,10 +10,9 @@ Template.item_list.helpers({
 
 });
 
-
 // Add food items.
 Template.add_item.events({
-  
+
   'click #add-button' : function(e) {
     e.preventDefault();
 
