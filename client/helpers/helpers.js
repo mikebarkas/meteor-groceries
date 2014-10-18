@@ -40,8 +40,12 @@ Template.add_item.events({
 // Make sortable.
 Template.item_list.rendered = function() {
 
-$('.selected').each(function() {
-if ('#food-item-list .selected') {
+/*
+$('#food-list-item').hasClass('selected') {
+console.log('has class');
+} // if
+*/
+
   this.$('#sortable').sortable({
 
     stop: function(e, ui) {
@@ -66,8 +70,8 @@ if ('#food-item-list .selected') {
     }
   });
 
-} // if
-}); // selected
+
+
 
 }
 
