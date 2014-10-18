@@ -40,6 +40,8 @@ Template.add_item.events({
 // Make sortable.
 Template.item_list.rendered = function() {
 
+$('.selected').each(function() {
+if ('#food-item-list .selected') {
   this.$('#sortable').sortable({
 
     stop: function(e, ui) {
@@ -56,13 +58,16 @@ Template.item_list.rendered = function() {
         newSort = (Blaze.getData(after).sort +
                   Blaze.getData(before).sort) / 2;
       }
-      
+
       groceries.update(
         {_id: Blaze.getData(target)._id},
         {$set: {sort: newSort}}
       );
     }
-  })
+  });
+
+} // if
+}); // selected
 
 }
 
